@@ -1,10 +1,7 @@
 #!/bin/sh
 #dotfiles/lndotfiles.sh
 
-dotfiles=$(ls -A)
+ln -sF $(pwd)"/".bashrc ~/.bashrc
+ln -sF $(pwd)"/".bash_aliases ~/.bash_aleases
+ln -sF $(pwd)"/".vimrc ~/.vimrc
 
-for i in $dotfiles; do
-	if [ "./"$i != $0 -o $i != ".git" ]; then 
-		ln -sF $(pwd)"/"$i ~/$i
-	fi
-done
