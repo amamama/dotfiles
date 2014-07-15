@@ -1,0 +1,8 @@
+XTerm*utf8:1
+XTerm*faceName:Ricty
+!XTerm*font:Ricty
+!XTerm*ximFont: Ricty
+!XTerm*faceNameDoublesize:Ricty
+XTerm*faceSize:12
+!XTerm*cjkWidth:true
+
