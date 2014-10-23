@@ -119,6 +119,8 @@ endif
 	set listchars=tab:>-,trail:_,eol:<
 	set ambiwidth=double
 
+	let c_no_curly_error = 1
+	let c_no_bracket_error = 1
 
 	nnoremap t l
 	nnoremap <C-w>t <C-w>l
@@ -131,6 +133,10 @@ endif
 	nnoremap q? <nop>
 	"nnoremap <silent> <cr> i<cr><esc>
 
-	hi PmenuSel ctermfg=7 ctermbg=5
-	hi Search term=NONE ctermfg=7 ctermbg=4
+	"hi PmenuSel ctermfg=7 ctermbg=5
+	"hi Search term=NONE ctermfg=7 ctermbg=4
+	"let g:hybrid_use_Xresources = 1
+	colorscheme hybrid
+	hi MatchParen ctermfg=250
+	hi Special ctermfg=193
 "-----------------------------------------------------------------------------

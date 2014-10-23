@@ -102,14 +102,19 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 #----------------------------------------------------------
+
+export GITURL=https://github.com
+
+if [ -f ~/.bash_funcs ]; then
+    . ~/.bash_funcs
+fi
+
 case $TERM in
 	linux)
-			fbterm -v  -- uim-fep
-			export TERM=fbterm
 		;;
 	xterm)
-			export TERM=xterm-256color
+			#export TERM=xterm-256color
 		;;
 esac
 
-eval "$(lesspipe)"
+eval "$(lesspipe.sh)"

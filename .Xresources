@@ -1,3 +1,6 @@
+XTerm*termName:xterm-256color
+XTerm*locale:1
+!XTerm*reverseVideo: on
 XTerm*utf8:1
 XTerm*faceName:Ricty
 !XTerm*font:Ricty
@@ -6,3 +9,34 @@ XTerm*faceName:Ricty
 XTerm*faceSize:12
 !XTerm*cjkWidth:true
 
+
+! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
+! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
+! vim: ft=xdefaults
+
+XTerm*background: #040808
+XTerm*foreground: #C5C8C6
+!! black
+!XTerm*color0: #282A2E
+!XTerm*color8: #373B41
+!! red
+!XTerm*color1: #A54242
+!XTerm*color9: #CC6666
+!! green
+!XTerm*color2: #8C9440
+!XTerm*color10: #B5BD68
+!! yellow
+!XTerm*color3: #DE935F
+!XTerm*color11: #F0C674
+!! blue
+!XTerm*color4: #5F819D
+!XTerm*color12: #81A2BE
+!! magenta
+!XTerm*color5: #85678F
+!XTerm*color13: #B294BB
+!! cyan
+!XTerm*color6: #5E8D87
+!XTerm*color14: #8ABEB7
+!! white
+!XTerm*color7: #707880
+!XTerm*color15: #C5C8C6
