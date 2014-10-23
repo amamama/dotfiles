@@ -1,0 +1,15 @@
+# vim: set filetype=sh :
+rlgosh () {
+	export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
+	rlwrap -c -q '"' -b "'"'(){}[].,#@;|`"' -m gosh "$@"
+}
+
+rlguile () {
+	export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
+	rlwrap -c -q '"' -b "'"'(){}[].,#@;|`"' -m guile "$@"
+}
+
+gitclone () {
+	git clone $GITURL/$1/$2.git
+}
+
