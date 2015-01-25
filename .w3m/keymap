@@ -1,0 +1,6 @@
+keymap m BOOKMARK
+keymap h MOVE_LEFT1
+keymap j MOVE_DOWN1
+keymap k MOVE_UP1
+keymap l MOVE_RIGHT1
+keymap W DICT_WORD_AT
