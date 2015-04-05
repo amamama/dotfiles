@@ -136,7 +136,7 @@ endif
 	"hi PmenuSel ctermfg=7 ctermbg=5
 	"hi Search term=NONE ctermfg=7 ctermbg=4
 	"let g:hybrid_use_Xresources = 1
-	colorscheme hybrid
-	hi MatchParen ctermfg=250
-	hi Special ctermfg=193
+	"colorscheme hybrid
+	"hi MatchParen ctermfg=250
+	"hi Special ctermfg=193
 "-----------------------------------------------------------------------------

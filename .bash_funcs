@@ -13,3 +13,8 @@ gitclone () {
 	git clone $GITURL/$1/$2.git
 }
 
+tmpvim () {
+	tmpname=$(mktemp --tmpdir=./ --suffix=$1 _XXXXX)
+ 	vim $tmpname
+}
+
