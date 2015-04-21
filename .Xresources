@@ -1,42 +1,26 @@
-XTerm*termName:xterm-256color
-XTerm*locale:1
-!XTerm*reverseVideo: on
-XTerm*utf8:1
-XTerm*faceName:Ricty
-!XTerm*font:Ricty
-!XTerm*ximFont: Ricty
-!XTerm*faceNameDoublesize:Ricty
-XTerm*faceSize:12
-!XTerm*cjkWidth:true
+URxvt.font:			xft:Ricty:antialias=true:size=32
 
+URxvt.letterSpace:	4
 
-! Hybrid Terminal Colours. Uses the palette from Tomorrow-Night:
-! https://github.com/chriskempson/tomorrow-theme/blob/master/vim/colors/Tomorrow-Night.vim
-! vim: ft=xdefaults
+URxvt.cursorColor:	#888877
+URxvt.cursorBlink:	1
 
-XTerm*background: #040808
-XTerm*foreground: #C5C8C6
-!! black
-!XTerm*color0: #282A2E
-!XTerm*color8: #373B41
-!! red
-!XTerm*color1: #A54242
-!XTerm*color9: #CC6666
-!! green
-!XTerm*color2: #8C9440
-!XTerm*color10: #B5BD68
-!! yellow
-!XTerm*color3: #DE935F
-!XTerm*color11: #F0C674
-!! blue
-!XTerm*color4: #5F819D
-!XTerm*color12: #81A2BE
-!! magenta
-!XTerm*color5: #85678F
-!XTerm*color13: #B294BB
-!! cyan
-!XTerm*color6: #5E8D87
-!XTerm*color14: #8ABEB7
-!! white
-!XTerm*color7: #707880
-!XTerm*color15: #C5C8C6
+URxvt.background:	#111122
+URxvt.foreground:	#BBBBCC
+
+URxvt.color0:		black
+URxvt.color1:		red3
+URxvt.color2:		green3
+URxvt.color3:		yellow3
+URxvt.color4:		blue3
+URxvt.color5:		magenta3
+URxvt.color6:		cyan3
+URxvt.color7:		gray90
+URxvt.color8:		gray40
+URxvt.color9:		red
+URxvt.color10:		green
+URxvt.color11:		yellow
+URxvt.color12:		blue
+URxvt.color13:		magenta
+URxvt.color14:		cyan
+URxvt.color15:		white

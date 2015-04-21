@@ -104,6 +104,7 @@ fi
 #----------------------------------------------------------
 
 export GITURL=https://github.com
+export EDITOR=vim
 
 if [ -f ~/.bash_funcs ]; then
     . ~/.bash_funcs
@@ -117,4 +118,5 @@ case $TERM in
 		;;
 esac
 
-eval "$(lesspipe.sh)"
+#eval "$(lesspipe.sh)"
+

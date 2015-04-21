@@ -12,7 +12,7 @@ search_conv 1
 pre_conv 0
 ucs_conv 1
 use_language_tag 1
-east_asian_width 1
+east_asian_width 0
 use_combining 1
 use_wide 1
 ext_halfdump 0
@@ -135,7 +135,7 @@ open_tab_dl_list 0
 open_tab_blank 0
 target_self 0
 frame 0
-pixel_per_line 17
-pixel_per_char 9
+pixel_per_line 45
+pixel_per_char 25
 indent_incr 4
 tabstop 8
