@@ -1,0 +1,35 @@
+Config {
+     font = "xft:Ricty:antialias=true:size=18"
+   , additionalFonts = []
+   , borderColor = "darkgreen"
+   , border = BottomB
+   , bgColor = "#111133"
+   , fgColor = "green"
+   , alpha = 255
+   , position = Static { xpos = 0 , ypos = 25, width = 2160, height = 30 }
+   , textOffset = -1
+   , iconOffset = -1
+   ,iconRoot = "."
+
+
+-- layout
+   , sepChar =  "%"   -- delineator between plugin names and straight text
+   , alignSep = "}{"  -- separator between left-right alignment
+-- , template = "%battery% | %multicpu% | %coretemp% | %memory% | %dynnetwork% |} %StdinReader% {| %RJTT% | %date% || %kbd% "
+-- , template = "%multicpu% | %coretemp% | %memory% | %dynnetwork% |} %StdinReader% {| %date% |   "
+   , template = "} %StdinReader% {"
+
+   -- general behavior
+   , lowerOnStart =     False    -- send to bottom of window stack on start
+   , hideOnStart =      False   -- start with window unmapped (hidden)
+   , allDesktops =      True    -- show on all desktops
+   , overrideRedirect = False    -- set the Override Redirect flag (Xlib)
+   , pickBroadest =     False   -- choose widest display (multi-monitor)
+   , persistent =       True    -- enable/disable hiding (True = disabled)
+
+   , commands =
+
+        -- weather monitor
+        [  Run StdinReader
+        ]
+    }
