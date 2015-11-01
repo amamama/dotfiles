@@ -111,7 +111,7 @@ endif
 	set showcmd
 	set title
 	"set ruf=%45(%12f%= %m%{'['.(&fenc!=''?&fenc:&enc).']'} %l-%v %p%% [%02B]%)
-	"set cursorline
+	set cursorline
 	set whichwrap=b,s,h,l,<,>,[,]
 "	set foldmethod=syntax
 	set showfulltag

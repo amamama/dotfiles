@@ -1,4 +1,4 @@
-URxvt.font:			xft:Ricty:antialias=true:size=32
+URxvt.font:			xft:Ricty:size=32:antialias=true
 
 URxvt.letterSpace:	4
 
@@ -24,3 +24,6 @@ URxvt.color12:		blue
 URxvt.color13:		magenta
 URxvt.color14:		cyan
 URxvt.color15:		white
+
+
+xmessage*international: True

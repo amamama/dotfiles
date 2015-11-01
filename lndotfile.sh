@@ -1,11 +1,23 @@
 #!/bin/sh
 #dotfiles/lndotfiles.sh
 
-ln -s -i $(pwd)"/".bashrc ~/.bashrc
-ln -s -i $(pwd)"/".bash_aliases ~/.bash_aliases
-ln -s -i $(pwd)"/".bash_funcs ~/.bash_funcs
-ln -s -i $(pwd)"/".vimrc ~/.vimrc
-ln -s -i $(pwd)"/".Xresources ~/.Xresources
+lnfiles() {
+	for i in $(ls -A) ;do
+		if [ $(echo ${i}|grep "~") ]; then continue; fi
+		if [ $(echo ${i}|grep ".git") ]; then continue; fi
+		if [ -f ${i} -a \( ! -e ~/$1/${i} -o ! -h ~/$1/${i} \) ]; then
+			echo "ln -s -i $(pwd)/${i} ~/$1/${i}"
+			ln -s -i $(pwd)/${i} ~/$1/${i}
+		elif [ -d ${i} ]; then
+			pushd ${i}
+			lnfiles $1/${i}
+			popd
+		fi
 
-ln -s -i $(pwd)"/".w3m/config ~/.w3m/config
-ln -s -i $(pwd)"/".w3m/keymap ~/.w3m/keymap
+	done;
+}
+
+lnfiles "."
+
+exit
+
