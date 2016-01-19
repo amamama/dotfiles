@@ -1,7 +1,6 @@
 alias a='./a.out'
+alias xd='od -tx1'
 alias 1r='gcc -xc -'
-alias google='w3m google.co.jp'
-alias sdn='sudo shutdown -h now'
 alias ascii='man ascii'
 alias src='source ~/.bashrc'
 alias mrogue='~/builds/rogue5.4.5/rogue'
@@ -20,10 +19,21 @@ alias fcscrsht='import -window "$(xdotool getwindowfocus -f)" /tmp/$(date +%s).p
 alias grec='grep --color=always'
 alias grecnt='grep --color=always -n -T'
 
+alias histgrep='history | grep'
 
 alias lc='ls --color=always'
 alias lesser='less -R'
 
+alias p8='ping 8.8.8.8'
+alias google='w3m https://google.co.jp'
+
 alias C='export LANG=C'
 alias ja='export LANG=ja_JP.UTF-8'
 alias linux='export TERM=linux'
+
+alias sdn='sudo shutdown -h now'
+alias mount='sudo mount'
+
+if [ -f ~/.bash_aliases_local ]; then
+    . ~/.bash_aliases_local
+fi

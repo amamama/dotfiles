@@ -1,12 +1,12 @@
 Config {
-     font = "xft:Ricty:antialias=true:size=18"
+     font = "xft:Ricty:antialias=true:size=8"
    , additionalFonts = []
    , borderColor = "darkgreen"
    , border = BottomB
    , bgColor = "#111133"
    , fgColor = "green"
    , alpha = 255
-   , position = Static { xpos = 0 , ypos = 25, width = 2160, height = 30 }
+   , position = Static { xpos = 0 , ypos = 30, width = 2160, height = 30 }
    , textOffset = -1
    , iconOffset = -1
    ,iconRoot = "."

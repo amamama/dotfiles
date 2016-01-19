@@ -1,20 +1,58 @@
 # vim: set filetype=sh :
-rlgosh () {
+rlgs() {
+	export RLWRAP_EDITOR='vim -c "set filetype=ps"'
+	rlwrap -c -q '"' -b "'"'(){}[].,#@;|`"' -m gs "$@"
+}
+
+rlgosh() {
 	export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
 	rlwrap -c -q '"' -b "'"'(){}[].,#@;|`"' -m gosh "$@"
 }
 
-rlguile () {
+rlguile() {
 	export RLWRAP_EDITOR='vim -c "set filetype=scheme"'
 	rlwrap -c -q '"' -b "'"'(){}[].,#@;|`"' -m guile "$@"
 }
 
-gitclone () {
+gitclone() {
 	git clone $GITURL/$1/$2.git
 }
 
-tmpvim () {
-	tmpname=$(mktemp --tmpdir=./ --suffix=$1 _XXXXX)
+tmpvim() {
+	tmpname=$(mktemp --tmpdir=./ --suffix=".${1}" ${1}_XXXXX)
  	vim $tmpname
 }
 
+genmf() {
+	SRC=$1
+	TARGET=$2
+	if [ -z ${SRC} ]; then
+		SRC=main.c
+	fi
+	if [ -z ${TARGET} ]; then
+		TARGET=a.out
+	fi
+	echo SRC=${SRC},TARGET=${TARGET}
+
+cat << 'EOF' | sed s/main\.c/${SRC}/g | sed s/a\.out/${TARGET}/g > Makefile
+CC=gcc
+CFLAGS:= -std=c11 -O2 -Wall -g $(CFLAGS)
+LDFLAGS:= $(LDFLAGS)
+SRC = main.c
+TARGET = a.out
+
+all: $(TARGET)
+
+${TARGET}: $(SRC)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(SRC) -o $(TARGET)
+
+run : all
+	./$(TARGET)
+
+EOF
+
+}
+
+if [ -f ~/.bash_funcs_local ]; then
+    . ~/.bash_aliases_local
+fi

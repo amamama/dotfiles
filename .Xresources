@@ -1,13 +1,9 @@
-URxvt.font:			xft:Ricty:size=32:antialias=true
-
-URxvt.letterSpace:	4
-
+URxvt.font:			xft:Ricty:size=16:antialias=true
+URxvt.letterSpace:	2
 URxvt.cursorColor:	#888877
 URxvt.cursorBlink:	1
-
 URxvt.background:	#111122
 URxvt.foreground:	#BBBBCC
-
 URxvt.color0:		black
 URxvt.color1:		red3
 URxvt.color2:		green3
@@ -25,5 +21,7 @@ URxvt.color13:		magenta
 URxvt.color14:		cyan
 URxvt.color15:		white
 
-
 xmessage*international: True
+
+Ghostscript*xResolution: 216
+Ghostscript*yResolution: 216

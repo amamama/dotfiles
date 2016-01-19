@@ -109,19 +109,12 @@ fi
 
 export GITURL=https://github.com
 export EDITOR=vim
-export PATH=$PATH:.cabal/bin
 
 if [ -f ~/.bash_funcs ]; then
     . ~/.bash_funcs
 fi
 
-case $TERM in
-	linux)
-		;;
-	xterm)
-			#export TERM=xterm-256color
-		;;
-esac
-
-#eval "$(lesspipe.sh)"
+if [ -f ~/.bashrc_local ]; then
+    . ~/.bash_aliases
+fi
 

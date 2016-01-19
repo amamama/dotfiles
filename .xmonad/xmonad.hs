@@ -25,7 +25,7 @@ myLogHook tbar sbar = do
 }
 	dynamicLogWithPP $ defaultPP {
       ppOrder     = \(ws:l:t:_)  -> [ws,l]
-    , ppCurrent   = xmobarColor  "green" "#111111" . wrap "[" "]"
+    , ppCurrent   = xmobarColor  "green" "#001933" . wrap "[" "]"
     , ppUrgent    = wrap "{" "}"
     , ppVisible   = wrap "(" ")"
     , ppHidden    = wrap " " " "
@@ -38,11 +38,15 @@ myLogHook tbar sbar = do
 
 myStartupHook = return ()
 myManageHook = composeAll [
+	--className =? "ghostscript"		--> doFloat,
+	--className =? "Ghostscript"		--> doFloat,
+	className =? "Display"		--> doCenterFloat,
+	className =? "display"		--> doCenterFloat,
 	className =? "xmessage"			--> doCenterFloat,
 	resource  =? "xmessage"			--> doCenterFloat ]
 myTitleWsBar = "xmobar ~/.config/xmobar/xmobar_title.rc"
 myStatusWsBar = "xmobar ~/.config/xmobar/xmobar_status.rc"
-myFont = "xft:Ricty:size=18:antialias=true"
+myFont = "xft:Ricty:size=8:antialias=true"
 
 myAdditionalKeys = [
 	((myModMask, xK_z), toggleWS) ,
@@ -50,7 +54,8 @@ myAdditionalKeys = [
 	((myModMask, xK_f), moveTo Next NonEmptyWS) ,
 	((myModMask, xK_p), prevWS) ,
 	((myModMask, xK_n), nextWS) ,
-	((myModMask, xK_r), spawn ("dmenu_run -fn '" ++ myFont ++ "'" )) ]
+	((myModMask.|. shiftMask, xK_n), refresh) ,
+	((myModMask, xK_r), spawn ("~/dmenu_recent_alias.sh -fn '" ++ myFont ++ "'" )) ]
 
 myRemoveKeys = [
 	(myModMask, xK_r) ,
@@ -65,6 +70,7 @@ myRemoveKeys = [
 main = do
 	titleWsBar <- spawnPipe myTitleWsBar
 	statusWsBar <- spawnPipe myStatusWsBar
+	trayer <- spawn("trayer --edge top --align right --SetDockType true --SetPartialStrut true --widthtype request --expand true --transparent true --alpha 255")
 	xmonad $ defaultConfig {
       -- simple stuff
         terminal           = myTerminal,
