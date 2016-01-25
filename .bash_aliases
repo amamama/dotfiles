@@ -19,7 +19,8 @@ alias fcscrsht='import -window "$(xdotool getwindowfocus -f)" /tmp/$(date +%s).p
 alias grec='grep --color=always'
 alias grecnt='grep --color=always -n -T'
 
-alias histgrep='history | grep'
+alias histep='history | grep'
+alias psaxep='ps ax | grep'
 
 alias lc='ls --color=always'
 alias lesser='less -R'
