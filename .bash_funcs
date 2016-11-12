@@ -54,5 +54,5 @@ EOF
 }
 
 if [ -f ~/.bash_funcs_local ]; then
-    . ~/.bash_aliases_local
+    . ~/.bash_funcs_local
 fi
