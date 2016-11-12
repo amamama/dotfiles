@@ -36,14 +36,14 @@ genmf() {
 
 cat << 'EOF' | sed s/main\.c/${SRC}/g | sed s/a\.out/${TARGET}/g > Makefile
 CC=gcc
-CFLAGS:= -std=c11 -O2 -Wall -g $(CFLAGS)
-LDFLAGS:= $(LDFLAGS)
+override CFLAGS:= -std=c11 -O2 -Wall -g $(CFLAGS)
+override LDFLAGS:= $(LDFLAGS)
 SRC = main.c
 TARGET = a.out
 
 all: $(TARGET)
 
-${TARGET}: $(SRC)
+$(TARGET): $(SRC)
 	$(CC) $(CFLAGS) $(LDFLAGS) $(SRC) -o $(TARGET)
 
 run : all
