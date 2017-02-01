@@ -8,6 +8,7 @@ alias sl='~/builds/sl/sl'
 alias memo='cat > /dev/null'
 alias chmodx='chmod +x'
 alias pd="pushd"
+alias srv="python -m http.server"
 
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
