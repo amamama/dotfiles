@@ -115,6 +115,6 @@ if [ -f ~/.bash_funcs ]; then
 fi
 
 if [ -f ~/.bashrc_local ]; then
-    . ~/.bash_aliases
+    . ~/.bashrc_local
 fi
 
